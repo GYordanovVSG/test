@@ -4,8 +4,11 @@ pipeline{
         stage("Publish HTML"){
             steps{
                 echo "Archiving index html as artifact"
-                archiveArtifacts artifacts: '**/index.html', followSymlinks: false
-            }
+                zip zipFile: 'index.zip', dir:'**/index.html'
+             }
         }
+        stage("Get artifacts"){
+             archiveArtifacts artifacts: '**/index.zip', followSymlinks: false
+        }            
     }
 }
