@@ -4,7 +4,7 @@ pipeline{
         stage("ZIP HTML"){
             steps{
                 echo "ZIPPING index html as artifact"
-                zip zipFile: 'index.zip', archive: false, dir: ''
+                zip dir: '', exclude: '', glob: '**/index.html', zipFile: 'index.zip'
              }
         }
         stage("Get artifacts"){
