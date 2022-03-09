@@ -8,7 +8,9 @@ pipeline{
              }
         }
         stage("Get artifacts"){
+            steps{
              archiveArtifacts artifacts: '**/index.zip', followSymlinks: false
+            }
         }            
     }
 }
