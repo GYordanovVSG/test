@@ -4,7 +4,7 @@ pipeline{
         stage("Publish HTML"){
             steps{
                 echo "Archiving index html as artifact"
-                zip zipFile: 'index.zip', dir:'index.html'
+                zip dir: '', exclude: '', glob: '', zipFile: 'index.html'
              }
         }
         stage("Get artifacts"){
