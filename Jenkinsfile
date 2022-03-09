@@ -1,10 +1,10 @@
 pipeline{
     agent any
     stages{
-        stage("Publish HTML"){
+        stage("ZIP HTML"){
             steps{
-                echo "Archiving index html as artifact"
-                zip dir: '', exclude: '', glob: '', zipFile: 'index.html'
+                echo "ZIPPING index html as artifact"
+                zip zipFile: 'index.zip', archive: false, dir: ''
              }
         }
         stage("Get artifacts"){
