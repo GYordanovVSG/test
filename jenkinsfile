@@ -4,7 +4,7 @@ pipeline{
         stage("Publish HTML"){
             steps{
                 echo "Archiving index html as artifact"
-                archiveArtifacts artifacts: 'index.html', followSymlinks: false
+                archiveArtifacts artifacts: 'https://github.com/GYordanovVSG/test/blob/main/index.html', followSymlinks: false
             }
         }
     }
